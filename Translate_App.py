@@ -69,11 +69,11 @@ src = lst_lang_kyhieu[lst_lang1.index(lang1)]
 dest = lst_lang_kyhieu[lst_lang2.index(lang2)]
 
 with pa2:
-    noi = st.button("Nói")          # Nhận dạng giọng nói
+    noi = st.button("Speak")          # Nhận dạng giọng nói
 with pa3:
-    doc_doc1 = st.button("Đọc")     # Đọc văn bản cần dịch
+    doc_doc1 = st.button("Listen")     # Đọc văn bản cần dịch
 with pa7:
-    doc_doc2 = st.button("Đọc ")    # Đọc văn bản đã dịch
+    doc_doc2 = st.button("Listen ")    # Đọc văn bản đã dịch
 
 
 # Main
