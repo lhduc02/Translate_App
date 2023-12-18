@@ -42,9 +42,9 @@ def recognize_vietnamese_speech():
         text = recognizer.recognize_google(audio, language="vi-VN")
         return text
     except sr.UnknownValueError:
-        return "Không thể nhận dạng giọng nói."
+        return "Voice recognition is not possible."
     except sr.RequestError:
-        return "Không thể nhận dạng giọng nói."
+        return "Voice recognition is not possible."
 
 
 # Tạo interface
@@ -53,16 +53,16 @@ st.write()
 
 select1, select2 = st.columns(2)
 pa1, pa2, pa3, pa4, pa5, pa6, pa7 = st.columns(7)
-lst_lang1 = ["Tiếng Việt ", "Tiếng Anh", "Tiếng Nhật", "Tiếng Trung", "Tiếng Tây Ban Nha", "Tiếng Pháp"]
-lst_lang2 = ["Tiếng Việt", "Tiếng Anh", "Tiếng Nhật", "Tiếng Trung", "Tiếng Tây Ban Nha", "Tiếng Pháp"]
+lst_lang1 = ["Vietnamese ", "English", "Japanese", "Chinese", "Spanish", "French"]
+lst_lang2 = ["Vietnamese", "English", "Japanese", "Chinese", "Spanish", "French"]
 with select1:
-    lang1 = st.selectbox("Chọn ngôn ngữ: ", lst_lang1)
+    lang1 = st.selectbox("Select language:", lst_lang1)
     st.write()
-    doc1 = st.text_area("Nhập văn bản cần dịch:", value=doc1)
+    doc1 = st.text_area("Enter the text to be translated:", value=doc1)
 with select2:
-    lang2 = st.selectbox("Chọn ngôn ngữ: ", lst_lang2)
+    lang2 = st.selectbox("Select language:", lst_lang2)
     st.write()
-    st.write("Bản dịch:")
+    st.write("Translation:")
 
 lst_lang_kyhieu = ['vi', 'en', 'ja', 'zh-cn', 'es', 'fr']
 src = lst_lang_kyhieu[lst_lang1.index(lang1)]
@@ -91,5 +91,4 @@ if doc_doc1:
 
 if doc_doc2:
     text2speech(doc2, dest)
-
 
